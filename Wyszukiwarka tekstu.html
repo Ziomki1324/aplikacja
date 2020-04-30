@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukiwarka tekstu</title>
+    <style>
+        .select{
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>Tekst do wyszukania <input class="word" type="text"></div>
+    <textarea class="text" cols="30" rows="10"></textarea>
+    <button onclick="start()">Potwierdz</button>
+    <div class="wynik"> </div>
+</body>
+
+<script>
+
+const word = document.querySelector('.word')
+const text = document.querySelector('.text')
+const wynik = document.querySelector('.wynik')
+
+function start(){
+    wynik.innerHTML = text.value.replace(RegExp(word.value, 'g'), <span class="select">${word.value}</span>)
+}
+
+</script>
+</html>
